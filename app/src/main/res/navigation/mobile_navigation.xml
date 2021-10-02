@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    android:id="@+id/mobile_navigation"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/characterListFragment">
+
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="muhammedshamshadp.hope.marvelworld.character.CharacterListFragment"
+        android:label="CharacterListFragment" />
+    <fragment
+        android:id="@+id/comicListFragment"
+        android:name="muhammedshamshadp.hope.marvelworld.character.ComicListFragment"
+        android:label="ComicListFragment" />
+</navigation>
