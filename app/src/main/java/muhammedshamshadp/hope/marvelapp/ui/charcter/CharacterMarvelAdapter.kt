@@ -1,4 +1,4 @@
-package muhammedshamshadp.hope.marvelapp
+package muhammedshamshadp.hope.marvelapp.ui.charcter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,11 +6,14 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.CharacterListItemBinding
 import muhammedshamshadp.hope.marvelworld.data.model.CharacterResponse
 
 
-class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMarvelAdapter.ViewHolder>(REPO_COMPARATOR) {
+class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMarvelAdapter.ViewHolder>(
+    REPO_COMPARATOR
+) {
 
     companion object {
         private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<CharacterResponse>() {

@@ -1,4 +1,4 @@
-package muhammedshamshadp.hope.marvelworld.character
+package muhammedshamshadp.hope.marvelapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

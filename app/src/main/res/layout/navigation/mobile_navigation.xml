@@ -9,11 +9,11 @@
 
     <fragment
         android:id="@+id/characterListFragment"
-        android:name="muhammedshamshadp.hope.marvelapp.CharacterListFragment"
+        android:name="muhammedshamshadp.hope.marvelapp.ui.charcter.CharacterListFragment"
         android:label="CharacterListFragment"
         tools:layout="@layout/fragment_charcters"/>
     <fragment
         android:id="@+id/comicListFragment"
-        android:name="muhammedshamshadp.hope.marvelworld.character.ComicListFragment"
+        android:name="muhammedshamshadp.hope.marvelapp.ui.ComicListFragment"
         android:label="ComicListFragment" />
 </navigation>

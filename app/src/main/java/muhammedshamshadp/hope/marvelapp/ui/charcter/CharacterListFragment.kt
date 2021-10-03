@@ -1,4 +1,4 @@
-package muhammedshamshadp.hope.marvelapp
+package muhammedshamshadp.hope.marvelapp.ui.charcter
 
 import android.app.SearchManager
 import android.content.Context
@@ -13,8 +13,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.coroutines.launch
+import muhammedshamshadp.hope.marvelapp.MainActivity
+import muhammedshamshadp.hope.marvelapp.MainViewModel
+import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.FragmentCharctersBinding
 import muhammedshamshadp.hope.marvelworld.utils.MySuggestionProvider
+
 
 
 class CharacterListFragment : Fragment() {
