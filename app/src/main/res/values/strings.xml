@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">marvelApp</string>
+    <string name="app_name">Marvel World</string>
     <string name="title_user">Characters</string>
     <string name="title_comics">Comics</string>
     <string name="no_net">No Internet</string>
     <string name="search_hint">Search a Character name</string>
+    <string name="abc_filer_hint">filter</string>
+
+
 </resources>
