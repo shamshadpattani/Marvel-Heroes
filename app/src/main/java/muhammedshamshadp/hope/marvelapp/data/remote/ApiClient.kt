@@ -1,8 +1,7 @@
-package muhammedshamshadp.hope.marvelworld.data.remote
+package muhammedshamshadp.hope.marvelapp.data.remote
 
 import android.app.Application
-import muhammedshamshadp.hope.marvelapp.data.remote.APIInterface
-import muhammedshamshadp.hope.marvelworld.BuildConfig
+import muhammedshamshadp.hope.marvelapp.BuildConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,7 +13,7 @@ object APIClient {
     var timeStamp = System.currentTimeMillis()
     private val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
         val defaultRequest = chain.request()
-       val hashSignature = "${timeStamp}${BuildConfig.PRIVATE_API_KEY}${BuildConfig.PUBLIC_API_KEY}".md5()
+       val hashSignature = "$timeStamp${BuildConfig.PRIVATE_API_KEY}${BuildConfig.PUBLIC_API_KEY}".md5()
         val defaultHttpUrl = defaultRequest.url
         val httpUrl = defaultHttpUrl.newBuilder()
             .addQueryParameter(TS, timeStamp.toString())

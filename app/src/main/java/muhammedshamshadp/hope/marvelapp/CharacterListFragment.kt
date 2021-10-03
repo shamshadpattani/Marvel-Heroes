@@ -14,7 +14,7 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.coroutines.launch
 import muhammedshamshadp.hope.marvelapp.databinding.FragmentCharctersBinding
-
+import muhammedshamshadp.hope.marvelworld.utils.MySuggestionProvider
 
 
 class CharacterListFragment : Fragment() {
@@ -71,12 +71,12 @@ class CharacterListFragment : Fragment() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 viewModel.searchQuery.value = query
                 observe()
-//                val suggestions = SearchRecentSuggestions(
-//                    activity,
-//                    MySuggestionProvider.AUTHORITY,
-//                    MySuggestionProvider.MODE
-//                )
-//                suggestions.saveRecentQuery(query, null)
+                val suggestions = SearchRecentSuggestions(
+                    activity,
+                    MySuggestionProvider.AUTHORITY,
+                    MySuggestionProvider.MODE
+                )
+                suggestions.saveRecentQuery(query, null)
                 return true
             }
 
