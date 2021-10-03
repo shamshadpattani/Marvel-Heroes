@@ -17,6 +17,7 @@ import muhammedshamshadp.hope.marvelapp.MainActivity
 import muhammedshamshadp.hope.marvelapp.MainViewModel
 import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.FragmentCharctersBinding
+import muhammedshamshadp.hope.marvelapp.utils.LoaderStateAdapter
 import muhammedshamshadp.hope.marvelworld.utils.MySuggestionProvider
 
 
@@ -25,7 +26,7 @@ class CharacterListFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
     lateinit var binding: FragmentCharctersBinding
-
+    lateinit var loaderStateAdapter: LoaderStateAdapter
     lateinit var adapter: CharacterMarvelAdapter
 
     override fun onCreateView(
@@ -51,6 +52,7 @@ class CharacterListFragment : Fragment() {
     private fun setUpViews(view: View) {
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = GridLayoutManager(context, 2)
+        binding.recyclerview.adapter = adapter.withLoadStateFooter(loaderStateAdapter)
     }
 
     private fun observe() {
@@ -112,7 +114,7 @@ class CharacterListFragment : Fragment() {
             } else {
                 binding.pBar.visibility = View.GONE
 
-                // getting the error
+              /*  // getting the error
                 val error = when {
                     loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
                     loadState.append is LoadState.Error -> loadState.append as LoadState.Error
@@ -121,8 +123,11 @@ class CharacterListFragment : Fragment() {
                 }
                 error?.let {
                     Toast.makeText(requireContext(), it.error.message, Toast.LENGTH_LONG).show()
-                }
+                }*/
             }
+            loaderStateAdapter = LoaderStateAdapter { adapter.retry() }
+
+
         }
     }
 }

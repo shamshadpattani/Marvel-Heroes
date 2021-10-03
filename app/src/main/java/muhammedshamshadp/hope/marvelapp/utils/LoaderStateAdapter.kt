@@ -27,7 +27,7 @@ class LoaderStateAdapter(private val retry: () -> Unit) :
     class LoaderViewHolder(view: View, retry: () -> Unit) : RecyclerView.ViewHolder(view) {
 
         companion object {
-            //get instance of the DoggoImageViewHolder
+
             fun getInstance(parent: ViewGroup, retry: () -> Unit): LoaderViewHolder {
                 val inflater = LayoutInflater.from(parent.context)
                 val view = inflater.inflate(R.layout.loader, parent, false)
