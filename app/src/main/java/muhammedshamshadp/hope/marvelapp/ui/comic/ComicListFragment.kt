@@ -106,7 +106,7 @@ class ComicListFragment : Fragment() {
                         else -> null
                     }
                     error?.let {
-                        Toast.makeText(requireContext(), resources.getString(R.string.button_retry), Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), resources.getString(R.string.label_error), Toast.LENGTH_LONG).show()
                     }
 
                 }

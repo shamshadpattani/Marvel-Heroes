@@ -5,7 +5,7 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@+id/start"
-        motion:duration="2000">
+        motion:duration="500">
         <OnClick
             motion:dragDirection="dragRight"
             motion:touchAnchorId="@+id/button"
@@ -25,7 +25,7 @@
 
         <Constraint
             android:id="@+id/tvError"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
             motion:layout_constraintEnd_toEndOf="parent"

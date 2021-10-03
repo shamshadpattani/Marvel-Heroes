@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mlLoader"
     android:layout_width="match_parent"
+    android:layout_marginBottom="@dimen/element_spacing"
     android:layout_height="wrap_content"
     app:layoutDescription="@xml/motion_loader">
 
@@ -23,12 +24,13 @@
 
     <TextView
         android:id="@+id/tvError"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/label_error"
         android:layout_marginEnd="@dimen/element_spacing"
         android:layout_marginStart="@dimen/element_spacing"
+        android:layout_marginBottom="@dimen/element_spacing"
         android:textAppearance="@style/TextAppearance.Marvel.BodySecondary"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
