@@ -12,7 +12,7 @@
     <string name="this_month_chip">This Month</string>
 
     <string name="back_net">Back Online</string>
-    <string name="label_error">something went wrong Try again</string>
+    <string name="label_error">Something went wrong! Try again</string>
     <string name="button_retry">Retry</string>
 
 </resources>

@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 import muhammedshamshadp.hope.marvelapp.MainViewModel
 import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.FragmentComicsBinding
+import muhammedshamshadp.hope.marvelapp.utils.LoaderStateAdapter
 import java.util.Locale.filter
 
 
@@ -22,6 +23,7 @@ class ComicListFragment : Fragment() {
         lateinit var binding: FragmentComicsBinding
 
         lateinit var adapter: ComicMarvelAdapter
+    lateinit var loaderStateAdapter: LoaderStateAdapter
 
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -39,13 +41,15 @@ class ComicListFragment : Fragment() {
             initAdapter()
             observe()
 
-            setUpViews(view)
+            setUpViews()
         }
 
 
-        private fun setUpViews(view: View) {
+        private fun setUpViews() {
             binding.recyclerview.adapter = adapter
             binding.recyclerview.layoutManager = GridLayoutManager(context, 2)
+            binding.recyclerview.adapter = adapter.withLoadStateFooter(loaderStateAdapter)
+
             binding.chipGroupChoice.setOnCheckedChangeListener { group, checkedId ->
                 val chip: Chip? = group.findViewById(checkedId)
 //            if(checkedId==-1) {
@@ -102,9 +106,11 @@ class ComicListFragment : Fragment() {
                         else -> null
                     }
                     error?.let {
-                        Toast.makeText(requireContext(), it.error.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), resources.getString(R.string.button_retry), Toast.LENGTH_LONG).show()
                     }
+
                 }
+                loaderStateAdapter = LoaderStateAdapter { adapter.retry() }
             }
         }
         override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

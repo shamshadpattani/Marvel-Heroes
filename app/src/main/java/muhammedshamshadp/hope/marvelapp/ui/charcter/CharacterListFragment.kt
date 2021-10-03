@@ -45,11 +45,11 @@ class CharacterListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
         observe()
-        setUpViews(view)
+        setUpViews()
     }
 
 
-    private fun setUpViews(view: View) {
+    private fun setUpViews() {
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = GridLayoutManager(context, 2)
         binding.recyclerview.adapter = adapter.withLoadStateFooter(loaderStateAdapter)
@@ -114,7 +114,7 @@ class CharacterListFragment : Fragment() {
             } else {
                 binding.pBar.visibility = View.GONE
 
-              /*  // getting the error
+                // getting the error
                 val error = when {
                     loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
                     loadState.append is LoadState.Error -> loadState.append as LoadState.Error
@@ -122,8 +122,8 @@ class CharacterListFragment : Fragment() {
                     else -> null
                 }
                 error?.let {
-                    Toast.makeText(requireContext(), it.error.message, Toast.LENGTH_LONG).show()
-                }*/
+                    Toast.makeText(requireContext(), resources.getString(R.string.button_retry), Toast.LENGTH_LONG).show()
+                }
             }
             loaderStateAdapter = LoaderStateAdapter { adapter.retry() }
 
