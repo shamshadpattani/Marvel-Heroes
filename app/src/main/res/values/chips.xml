@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="ShapeAppearance.App.FilterChip" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="Widget.App.Chip.StatusFilter" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.FilterChip</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+
+
+    <style name="Widget.App.Chip.StatusFilter.Info">
+        <item name="android:textColor">@color/colorInfoDark</item>
+        <item name="selectableItemBackground">@color/colorSuccessLighter</item>
+        <item name="chipBackgroundColor">@color/colorInfoLighter</item>
+        <item name="checkedIcon">@drawable/ic_sharp_check_24</item>
+        <item name="checkedIconTint">@color/colorSuccess</item>
+        <item name="rippleColor">@color/colorInfoLight</item>
+    </style>
+
+
+</resources>

@@ -1,11 +1,10 @@
-package muhammedshamshadp.hope.marvelworld.data.repository
+package muhammedshamshadp.hope.marvelapp.data.repository
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import muhammedshamshadp.hope.marvelworld.data.model.BaseResponse
-import muhammedshamshadp.hope.marvelworld.data.model.CharacterResponse
+import muhammedshamshadp.hope.marvelworld.data.model.ComicResponse
 import muhammedshamshadp.hope.marvelworld.data.model.MarvelResponse
-import muhammedshamshadp.hope.marvelapp.data.remote.APIInterface
 import muhammedshamshadp.hope.marvelapp.data.repository.MarvelRepository.Companion.DEFAULT_PAGE_INDEX
 import muhammedshamshadp.hope.marvelapp.data.repository.MarvelRepository.Companion.DEFAULT_PAGE_SIZE
 import retrofit2.HttpException
@@ -13,19 +12,23 @@ import retrofit2.Response
 import java.io.IOException
 
 
-class CharactersPagingDataSource(private val service: APIInterface, private val search:String?) :PagingSource<Int, CharacterResponse>() {
+class ComicPagingDataSource(private val service: muhammedshamshadp.hope.marvelapp.data.remote.APIInterface, private val filter:String?) :PagingSource<Int, ComicResponse>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharacterResponse> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ComicResponse> {
 
         return try {
-            var query=search ?: null
+            val filter=filter?:null
             val page = params.key ?: DEFAULT_PAGE_INDEX
-          var  response: Response<BaseResponse<MarvelResponse<CharacterResponse>>>? = null
-            if(!query.isNullOrEmpty()){
-                response = service.getCharacter(offset = page*params.loadSize,query)
+          var  response: Response<BaseResponse<MarvelResponse<ComicResponse>>>? = null
+
+            response = if(!filter.isNullOrEmpty()) {
+               service.getComics(offset = page*params.loadSize,filter)
             }else{
-                response = service.getCharacter(offset = page*params.loadSize,null)
+                service.getComics(offset = page*params.loadSize,null)
             }
+
+
+
 
         //    LoadResult.Page()
           val repos = response?.body()?.data?.characters?: mutableListOf()
@@ -44,7 +47,7 @@ class CharactersPagingDataSource(private val service: APIInterface, private val 
     }
 
     // The refresh key is used for subsequent refresh calls to PagingSource.load after the initial load
-    override fun getRefreshKey(state: PagingState<Int, CharacterResponse>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, ComicResponse>): Int? {
         // We need to get the previous key (or next key if previous is null) of the page
         // that was closest to the most recently accessed index.
         // Anchor position is the most recently accessed index

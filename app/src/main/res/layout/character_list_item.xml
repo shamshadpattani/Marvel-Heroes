@@ -24,7 +24,7 @@
             android:id="@+id/imageUser"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_superhero"
+            android:src="@drawable/ic_hero"
             android:scaleType="centerCrop"/>
 
 
@@ -32,6 +32,7 @@
 
     <TextView
         android:id="@+id/itemName"
+        style="@style/TextAppearance.Marvel.Body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="end"
@@ -39,7 +40,7 @@
         android:maxLines="2"
         android:text="Spider-man"
         android:textDirection="locale"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView3"
+        app:layout_constraintStart_toStartOf="@+id/cardView3"
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

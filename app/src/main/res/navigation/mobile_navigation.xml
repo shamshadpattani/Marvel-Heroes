@@ -13,6 +13,6 @@
         android:label="CharacterListFragment" />
     <fragment
         android:id="@+id/comicListFragment"
-        android:name="muhammedshamshadp.hope.marvelapp.ui.ComicListFragment"
+        android:name="muhammedshamshadp.hope.marvelapp.ui.comic.ComicListFragment"
         android:label="ComicListFragment" />
 </navigation>

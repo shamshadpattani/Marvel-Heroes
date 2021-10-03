@@ -1,4 +1,4 @@
-package muhammedshamshadp.hope.marvelapp.ui.charcter
+package muhammedshamshadp.hope.marvelapp.ui.comic
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,17 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.CharacterListItemBinding
-import muhammedshamshadp.hope.marvelworld.data.model.CharacterResponse
+import muhammedshamshadp.hope.marvelworld.data.model.ComicResponse
 
-
-class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMarvelAdapter.ViewHolder>(REPO_COMPARATOR) {
+class ComicMarvelAdapter() :PagingDataAdapter<ComicResponse, ComicMarvelAdapter.ViewHolder>(REPO_COMPARATOR) {
 
     companion object {
-        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<CharacterResponse>() {
-            override fun areItemsTheSame(oldItem: CharacterResponse, newItem: CharacterResponse): Boolean =
+        private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<ComicResponse>() {
+            override fun areItemsTheSame(oldItem: ComicResponse, newItem: ComicResponse): Boolean =
                 oldItem.id == newItem.id
 
-            override fun areContentsTheSame(oldItem: CharacterResponse, newItem: CharacterResponse): Boolean =
+            override fun areContentsTheSame(oldItem: ComicResponse, newItem: ComicResponse): Boolean =
                 oldItem.id == newItem.id
         }
     }
@@ -27,14 +26,14 @@ class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMa
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-        holder.binding.itemName.text=item?.name.toString()
+        holder.binding.itemName.text=item?.title.toString()
         val img = "${item?.thumbnail?.path}.${item?.thumbnail?.extension}"
-        holder.binding.imageUser.load( img) {
-            placeholder(R.drawable.ic_hero)
-            error(R.drawable.ic_hero)
-        }
+            holder.binding.imageUser.load( img) {
+                placeholder(R.drawable.ic_book)
+                error(R.drawable.ic_book)
+            }
 
-    }
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
