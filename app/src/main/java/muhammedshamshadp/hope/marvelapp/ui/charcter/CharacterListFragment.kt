@@ -18,7 +18,7 @@ import muhammedshamshadp.hope.marvelapp.MainViewModel
 import muhammedshamshadp.hope.marvelapp.R
 import muhammedshamshadp.hope.marvelapp.databinding.FragmentCharctersBinding
 import muhammedshamshadp.hope.marvelapp.utils.LoaderStateAdapter
-import muhammedshamshadp.hope.marvelworld.utils.MySuggestionProvider
+import muhammedshamshadp.hope.marvelapp.utils.MySuggestionProvider
 
 
 

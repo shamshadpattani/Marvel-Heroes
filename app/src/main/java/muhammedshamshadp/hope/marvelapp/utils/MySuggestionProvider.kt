@@ -1,4 +1,4 @@
-package muhammedshamshadp.hope.marvelworld.utils
+package muhammedshamshadp.hope.marvelapp.utils
 
 import android.content.SearchRecentSuggestionsProvider
 
@@ -8,7 +8,7 @@ class MySuggestionProvider : SearchRecentSuggestionsProvider() {
     }
 
     companion object {
-        const val AUTHORITY = "com.example.MySuggestionProvider"
+        const val AUTHORITY = "muhammedshamshadp.hope.marvelapp.utils.MySuggestionProvider"
         const val MODE: Int = SearchRecentSuggestionsProvider.DATABASE_MODE_QUERIES
     }
 }
