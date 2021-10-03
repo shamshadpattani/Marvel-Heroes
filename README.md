@@ -1,5 +1,5 @@
 # Marvel-Heroes
- A-Z list of Marvel comic characters
+ A-Z list of Marvel comic characters and comics list
 
 Please create your on API KEY 
 
