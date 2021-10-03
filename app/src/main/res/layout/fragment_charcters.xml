@@ -6,13 +6,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <LinearLayout
+        android:id="@+id/emptyView"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/errorImage"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/ic_snap" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/TextAppearance.Marvel.Headline5"
+            android:text="@string/empty_message" />
+    </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="6"
+            tools:visibility="gone"
+            android:visibility="visible"
             android:layout_marginTop="8dp"
             app:spanCount="2"
             android:nestedScrollingEnabled="false"

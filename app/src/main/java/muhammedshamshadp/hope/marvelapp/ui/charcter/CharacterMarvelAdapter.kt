@@ -46,9 +46,4 @@ class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMa
         )
     }
 
-
-
-
-
-
 }

@@ -7,6 +7,7 @@ import android.provider.SearchRecentSuggestions
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -76,9 +77,8 @@ class CharacterListFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 viewModel.searchQuery.value = query
-                observe()
                 val suggestions = SearchRecentSuggestions(
-                    activity,
+                    requireContext(),
                     MySuggestionProvider.AUTHORITY,
                     MySuggestionProvider.MODE
                 )
@@ -88,7 +88,6 @@ class CharacterListFragment : Fragment() {
 
             override fun onQueryTextChange(newText: String): Boolean {
                 viewModel.searchQuery.value = newText
-                observe()
                 return true
             }
         })
@@ -108,6 +107,17 @@ class CharacterListFragment : Fragment() {
     private fun initAdapter() {
         adapter = CharacterMarvelAdapter()
         adapter.addLoadStateListener { loadState ->
+
+            if (loadState.source.refresh is LoadState.NotLoading &&
+                loadState.append.endOfPaginationReached &&
+                adapter.itemCount < 1
+            ) {
+                binding.recyclerview.isVisible = false
+                binding.emptyView.isVisible = true
+            } else {
+                binding.emptyView.isVisible = false
+                binding.recyclerview.isVisible = true
+            }
 
             if (loadState.refresh is LoadState.Loading) {
                 binding.pBar.visibility = View.VISIBLE

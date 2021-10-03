@@ -14,5 +14,6 @@
     <string name="back_net">Back Online</string>
     <string name="label_error">Something went wrong! Try again</string>
     <string name="button_retry">Retry</string>
+    <string name="empty_message">Oops! No One exist</string>
 
 </resources>
