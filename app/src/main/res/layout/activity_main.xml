@@ -33,26 +33,26 @@
 
 
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/netView"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_gravity="bottom"-->
-    <!--        android:orientation="vertical"-->
-    <!--        android:visibility="gone"-->
-    <!--        android:background="@color/colorDangerDark"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/nav_view"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        tools:visibility="visible">-->
+        <LinearLayout
+            android:id="@+id/netView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/colorDangerDark"
+            app:layout_constraintBottom_toTopOf="@+id/nav_view"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible">
 
-    <!--        <TextView-->
-    <!--            android:id="@+id/netStatus"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center"-->
-    <!--            android:gravity="center"-->
-    <!--            style="@style/TextAppearance.Marvel.Body"-->
-    <!--            android:text="@string/no_net"-->
-    <!--            android:textColor="@color/white" />-->
-    <!--    </LinearLayout>-->
+            <TextView
+                android:id="@+id/netStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                style="@style/TextAppearance.Marvel.Body"
+                android:text="@string/no_net"
+                android:textColor="@color/white" />
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
