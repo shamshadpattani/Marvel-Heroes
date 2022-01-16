@@ -13,8 +13,8 @@ android {
         applicationId "muhammedshamshadp.hope.marvelapp"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.23"
 
 
         buildConfigField "String", "PUBLIC_API_KEY", "\"$PUBLIC_API_KEY\""
