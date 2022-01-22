@@ -3,6 +3,7 @@ package muhammedshamshadp.hope.marvelapp.ui.comic
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +34,7 @@ class ComicListFragment : Fragment() {
             setHasOptionsMenu(true)
             viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
             binding = FragmentComicsBinding.inflate(inflater, container, false)
+
             return binding.root
         }
 
@@ -40,8 +42,8 @@ class ComicListFragment : Fragment() {
             super.onViewCreated(view, savedInstanceState)
             initAdapter()
             observe()
-
             setUpViews()
+            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
         }
 
 
