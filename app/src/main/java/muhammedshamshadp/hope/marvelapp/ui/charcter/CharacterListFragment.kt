@@ -44,7 +44,7 @@ class CharacterListFragment : Fragment() {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
         binding = FragmentCharctersBinding.inflate(inflater, container, false)
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+
         return binding.root
     }
 
@@ -54,6 +54,7 @@ class CharacterListFragment : Fragment() {
         initAdapter()
         observe()
         setUpViews()
+        (activity as AppCompatActivity?)?.supportActionBar?.show()
     }
 
 

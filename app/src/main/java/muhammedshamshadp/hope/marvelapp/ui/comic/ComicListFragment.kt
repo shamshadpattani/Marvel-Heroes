@@ -34,7 +34,7 @@ class ComicListFragment : Fragment() {
             setHasOptionsMenu(true)
             viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
             binding = FragmentComicsBinding.inflate(inflater, container, false)
-            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+
             return binding.root
         }
 
@@ -42,8 +42,8 @@ class ComicListFragment : Fragment() {
             super.onViewCreated(view, savedInstanceState)
             initAdapter()
             observe()
-
             setUpViews()
+            (activity as AppCompatActivity?)!!.supportActionBar!!.show()
         }
 
 

@@ -22,7 +22,7 @@ class CharacterDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+
     }
 
     override fun onCreateView(
@@ -33,5 +33,9 @@ class CharacterDetailsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_character_details, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
 
 }
