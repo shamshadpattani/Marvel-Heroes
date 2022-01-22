@@ -10,9 +10,22 @@
     <fragment
         android:id="@+id/characterListFragment"
         android:name="muhammedshamshadp.hope.marvelapp.ui.charcter.CharacterListFragment"
-        android:label="CharacterListFragment" />
+        android:label="CharacterListFragment"
+        tools:layout="@layout/fragment_charcters">
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/comicListFragment"
         android:name="muhammedshamshadp.hope.marvelapp.ui.comic.ComicListFragment"
-        android:label="ComicListFragment" />
+        android:label="ComicListFragment"
+        tools:layout="@layout/fragment_comics"/>
+
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="muhammedshamshadp.hope.marvelapp.ui.charcter.CharacterDetailsFragment"
+        android:label="fragment_character_details"
+        tools:layout="@layout/fragment_character_details" />
+
 </navigation>

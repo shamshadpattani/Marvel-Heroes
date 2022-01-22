@@ -11,7 +11,7 @@ import muhammedshamshadp.hope.marvelapp.databinding.CharacterListItemBinding
 import muhammedshamshadp.hope.marvelworld.data.model.CharacterResponse
 
 
-class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMarvelAdapter.ViewHolder>(REPO_COMPARATOR) {
+class CharacterMarvelAdapter( val onItemClicked: (position: Int) -> Unit) :PagingDataAdapter<CharacterResponse, CharacterMarvelAdapter.ViewHolder>(REPO_COMPARATOR) {
 
     companion object {
         private val REPO_COMPARATOR = object : DiffUtil.ItemCallback<CharacterResponse>() {
@@ -32,6 +32,9 @@ class CharacterMarvelAdapter() :PagingDataAdapter<CharacterResponse, CharacterMa
         holder.binding.imageUser.load( img) {
             placeholder(R.drawable.ic_hero)
             error(R.drawable.ic_hero)
+        }
+        holder.itemView.setOnClickListener {
+            onItemClicked.invoke(item!!.id)
         }
 
     }

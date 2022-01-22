@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/emptyView"
-        tools:visibility="visible"
+        tools:visibility="gone"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,13 +34,15 @@
             style="@style/TextAppearance.Marvel.Headline5"
             android:text="@string/empty_message" />
     </LinearLayout>
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="6"
-            tools:visibility="gone"
+            tools:visibility="visible"
             android:visibility="visible"
             android:layout_marginTop="8dp"
             app:spanCount="2"
